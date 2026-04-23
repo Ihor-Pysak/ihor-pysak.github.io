@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { UAProvider } from "@/components/providers/UAProvider";
+import ScrollProgress from "@/components/effects/ScrollProgress";
+import CustomCursor from "@/components/effects/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +34,9 @@ export const metadata: Metadata = {
   },
 };
 
+// Set data-theme before React hydrates so there's no flash of wrong theme
+const themeInitScript = `(function(){try{var s=localStorage.getItem('theme');var t=s||(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,10 +45,21 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="dark"
       className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
     >
-      <body>{children}</body>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body>
+        <ThemeProvider>
+          <UAProvider>
+            <ScrollProgress />
+            <CustomCursor />
+            {children}
+          </UAProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
