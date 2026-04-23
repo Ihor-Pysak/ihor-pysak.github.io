@@ -5,6 +5,7 @@ import { ease, revealProps, fadeUp, stagger } from '../../lib/motion';
 import StatCounters from './StatCounters';
 import ProductCardDemo from './ProductCardDemo';
 import DiscountCalculatorDemo from './DiscountCalculatorDemo';
+import ShippingRulesDemo from './ShippingRulesDemo';
 import IntegrationDiagram from './IntegrationDiagram';
 import ShippedList from './ShippedList';
 
@@ -83,10 +84,33 @@ export default function CaseStudy() {
           </motion.div>
         </motion.div>
 
+        {/* Live demo 3 — Shipping rules */}
+        <motion.div {...revealProps} variants={stagger(0.06)} className="mt-28 grid grid-cols-12 gap-6 md:gap-10">
+          <motion.div variants={fadeUp} className="col-span-12 md:col-span-5">
+            <div className="mono text-[11px] tracking-[0.18em] uppercase text-[var(--mute)]">Live component · 03</div>
+            <h3 className="mt-4 text-[clamp(26px,3vw,40px)] font-medium tracking-tight leading-[1.1] text-[var(--ink)]">
+              Shipping rules that explain themselves.
+            </h3>
+            <p className="mt-5 text-[15px] leading-[1.6] text-[var(--ink-2)] max-w-[42ch]">
+              Cart-weight sliders drive a cascade of rules — free-shipping thresholds, category surcharges, regional pricing —
+              each evaluating in sequence with a visible pass / fail state. This is how the real checkout behaves;
+              the calculation below is the same logic, slightly simplified.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-1.5">
+              {['JavaScript', 'ShipMagic', 'ERP rules', 'React'].map((t) => (
+                <span key={t} className="mono text-[11px] px-2.5 py-1 rounded-full border border-[var(--hair-2)] text-[var(--ink-2)]">{t}</span>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div variants={fadeUp} className="col-span-12 md:col-span-7">
+            <ShippingRulesDemo />
+          </motion.div>
+        </motion.div>
+
         {/* Integration diagram */}
         <motion.div {...revealProps} variants={stagger(0.06)} className="mt-28 grid grid-cols-12 gap-6 md:gap-10 items-center">
           <motion.div variants={fadeUp} className="col-span-12 md:col-span-5">
-            <div className="mono text-[11px] tracking-[0.18em] uppercase text-[var(--mute)]">Integration · 03</div>
+            <div className="mono text-[11px] tracking-[0.18em] uppercase text-[var(--mute)]">Integration · 04</div>
             <h3 className="mt-4 text-[clamp(26px,3vw,40px)] font-medium tracking-tight leading-[1.1] text-[var(--ink)]">
               Pipelines that keep two systems honest.
             </h3>
