@@ -4,14 +4,12 @@ import React, { createContext, useCallback, useContext, useEffect, useState } fr
 const ThemeCtx = createContext({ theme: 'dark', toggle: () => {} });
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('dark');
-
-  // Read stored theme on mount (inline script in layout already sets data-theme
-  // to avoid FOUC, so we just sync our state to it here).
-  useEffect(() => {
-    const current = document.documentElement.getAttribute('data-theme') || 'dark';
-    setTheme(current);
-  }, []);
+  // The inline script in app/layout.tsx <head> sets data-theme before hydration,
+  // so we can read it straight from the DOM during state init. SSR falls back to dark.
+  const [theme, setTheme] = useState(() => {
+    if (typeof document === 'undefined') return 'dark';
+    return document.documentElement.getAttribute('data-theme') || 'dark';
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
