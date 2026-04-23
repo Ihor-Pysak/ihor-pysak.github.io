@@ -46,11 +46,10 @@ export default function ProductCardDemo() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, ease }}
-            className="relative w-24 h-28 rounded-[10px] border border-[var(--hair-2)] bg-gradient-to-b from-[#1a1a20] to-[#0e0e12] flex flex-col items-center justify-center"
-            style={{ boxShadow: '0 10px 30px -10px rgba(139,123,255,0.3), inset 0 1px 0 rgba(255,255,255,0.05)' }}
+            className="product-placeholder relative w-24 h-28 rounded-[10px] border border-[var(--hair-2)] flex flex-col items-center justify-center"
           >
             <div className="w-14 h-1 rounded-full bg-[var(--accent)]/60 mb-2" />
-            <div className="mono text-[9px] tracking-[0.14em] uppercase text-[var(--mute)]">{v.label}</div>
+            <div className="product-placeholder-label mono text-[9px] tracking-[0.14em] uppercase">{v.label}</div>
           </motion.div>
           <span className={`absolute top-2 left-2 mono text-[9px] tracking-[0.14em] uppercase border px-2 py-0.5 rounded-full ${STOCK_COLOR[v.stock]}`}>
             {v.stock === 'Out' ? 'Sold out' : v.stock === 'Limited' ? 'Low stock' : 'In stock'}

@@ -116,7 +116,7 @@ export default function DiscountCalculatorDemo() {
           />
           {/* thumb */}
           <motion.div
-            className="absolute top-1/2 w-5 h-5 rounded-full bg-[var(--ink)] border-2 border-[var(--accent)] pointer-events-none shadow-[0_0_0_4px_rgba(139,123,255,0.15)]"
+            className="slider-thumb absolute top-1/2 w-5 h-5 rounded-full pointer-events-none"
             style={{ left: `calc(${(grams / 5000) * 100}% - 10px)`, translateY: '-50%' }}
           />
         </div>
