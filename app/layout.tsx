@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Ihor Pysak — E-commerce Solution Architect & Full-Stack Developer",
   description:
     "I architect and ship B2B e-commerce systems end-to-end — storefronts, custom apps, checkout-layer logic, and the integration pipelines that keep inventory and orders in sync between back-office systems and the store.",
-  metadataBase: new URL("https://ihor-pysak.vercel.app"),
+  metadataBase: new URL("https://ihor-pysak.github.io"),
   openGraph: {
     title: "Ihor Pysak — E-commerce Solution Architect & Full-Stack Developer",
     description:
