@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ease, revealProps, fadeUp, stagger } from '../lib/motion';
+import SectionTitle from './ui/SectionTitle';
 
 const GROUPS = [
   { k: 'Frontend',     items: ['HTML5', 'CSS3', 'JavaScript (ES5+)', 'TypeScript', 'Responsive Design', 'Shopify Liquid', 'AJAX'] },
@@ -28,9 +29,9 @@ export default function Skills() {
             <div className="mono text-[11px] tracking-[0.2em] uppercase text-[var(--mute)]">Stack &amp; formation</div>
           </motion.div>
           <motion.div variants={fadeUp} className="col-span-12 md:col-span-8">
-            <h2 className="text-[clamp(32px,4.4vw,56px)] font-medium tracking-tight leading-[1.04] text-[var(--ink)]">
+            <SectionTitle className="text-[clamp(32px,4.4vw,56px)] font-medium tracking-tight leading-[1.04] text-[var(--ink)]">
               The toolkit,<br /><span className="text-[var(--ink-2)]">honestly grouped.</span>
-            </h2>
+            </SectionTitle>
           </motion.div>
         </motion.div>
 

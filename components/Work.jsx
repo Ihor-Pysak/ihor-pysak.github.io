@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ease, revealProps, fadeUp, stagger } from '../lib/motion';
+import SectionTitle from './ui/SectionTitle';
 
 const JOBS = [
   {
@@ -40,9 +41,9 @@ export default function Work() {
             <div className="mono text-[11px] tracking-[0.2em] uppercase text-[var(--mute)]">Experience</div>
           </motion.div>
           <motion.div variants={fadeUp} className="col-span-12 md:col-span-8">
-            <h2 className="text-[clamp(32px,4.4vw,56px)] font-medium tracking-tight leading-[1.04] text-[var(--ink)]">
+            <SectionTitle className="text-[clamp(32px,4.4vw,56px)] font-medium tracking-tight leading-[1.04] text-[var(--ink)]">
               Five years, three countries,<br />one trajectory.
-            </h2>
+            </SectionTitle>
           </motion.div>
         </motion.div>
 
