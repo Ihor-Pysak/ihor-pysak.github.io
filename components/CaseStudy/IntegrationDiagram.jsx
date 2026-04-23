@@ -143,11 +143,12 @@ export default function IntegrationDiagram() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease, delay: 0.3 }}
         >
-          <rect x="245" y="180" width="110" height="26" rx="13" fill="var(--bg-2)" stroke="var(--hair-2)" />
+          <rect x="220" y="178" width="160" height="28" rx="14" fill="var(--bg-2)" stroke="var(--hair-2)" />
           <text
             x="300"
-            y="197"
+            y="192"
             textAnchor="middle"
+            dominantBaseline="middle"
             fill="var(--accent)"
             fontFamily="Geist Mono, monospace"
             fontSize="10"
