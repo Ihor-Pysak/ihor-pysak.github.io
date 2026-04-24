@@ -71,6 +71,8 @@ html, body {
   background: var(--bg);
   color: var(--ink);
   transition: background-color 400ms ease, color 400ms ease;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 html {
